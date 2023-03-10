@@ -3,6 +3,9 @@ name: Update APIs
 
 on:
   workflow_dispatch:
+    inputs:
+      version:
+        required: true
   #schedule:
   #- cron: "*/15 * * * *"
 
@@ -25,7 +28,7 @@ jobs:
       - name: Sync Packages
         run: |
           pushd lib
-            git checkout v0.7.2
+            git checkout ${{ github.event.inputs.version }}
           popd
 
           cp -fR lib/apis/externalsecrets apis
@@ -43,7 +46,7 @@ jobs:
           find: "github.com/external-secrets/external-secrets"
           replace: "github.com/garethjevans/external-secrets-api"
           regex: false
-          ignore: '.github/**'
+          include: 'apis/**'
 
       - name: Set up Go
         uses: actions/setup-go@v2
