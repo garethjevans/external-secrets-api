@@ -25,7 +25,7 @@ jobs:
       - name: Sync Packages
         run: |
           pushd lib
-            git checkout v1.7.2
+            git checkout v0.7.2
           popd
 
           cp -fR lib/apis/externalsecrets apis
