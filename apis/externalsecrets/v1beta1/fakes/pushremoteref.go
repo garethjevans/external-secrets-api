@@ -4,7 +4,7 @@ package fakes
 import (
 	"sync"
 
-	"github.com/external-secrets/external-secrets/apis/externalsecrets/v1beta1"
+	"github.com/garethjevans/external-secrets-api/apis/externalsecrets/v1beta1"
 )
 
 type PushRemoteRef struct {

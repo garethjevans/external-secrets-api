@@ -15,7 +15,7 @@ limitations under the License.
 package v1beta1
 
 import (
-	esmeta "github.com/external-secrets/external-secrets/apis/meta/v1"
+	esmeta "github.com/garethjevans/external-secrets-api/apis/meta/v1"
 )
 
 // Set DOPPLER_BASE_URL and DOPPLER_VERIFY_TLS environment variables to override defaults
