@@ -38,16 +38,12 @@ jobs:
           for TEST in $TESTS; do
             rm $TEST
           done
-          rm -fr lib      
-      
-      - name: Find and Replace
-        uses: jacobtomlinson/gha-find-replace@v3
-        with:
-          find: "github.com/garethjevans/external-secrets-api"
-          replace: "github.com/garethjevans/external-secrets-api"
-          regex: false
-          include: 'apis'
+          rm -fr lib
 
+          pushd apis
+            sed -i 's|github.com/external-secrets/external-secrets|github.com/garethjevans/external-secrets-api|g' *
+          popd
+      
       - name: Set up Go
         uses: actions/setup-go@v2
         with:
