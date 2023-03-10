@@ -46,7 +46,7 @@ jobs:
           find: "github.com/garethjevans/external-secrets-api"
           replace: "github.com/garethjevans/external-secrets-api"
           regex: false
-          include: 'apis/**'
+          include: 'apis'
 
       - name: Set up Go
         uses: actions/setup-go@v2
