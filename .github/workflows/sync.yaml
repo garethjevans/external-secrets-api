@@ -40,9 +40,7 @@ jobs:
           done
           rm -fr lib
 
-          pushd apis
-            sed -i 's|github.com/external-secrets/external-secrets|github.com/garethjevans/external-secrets-api|g' *
-          popd
+          find apis -name '*.go' | xargs -0 sed -i 's|github.com/external-secrets/external-secrets|github.com/garethjevans/external-secrets-api|g'
       
       - name: Set up Go
         uses: actions/setup-go@v2
