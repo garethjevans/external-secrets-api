@@ -15,7 +15,7 @@ limitations under the License.
 package v1alpha1
 
 import (
-	esmeta "github.com/external-secrets/external-secrets/apis/meta/v1"
+	esmeta "github.com/garethjevans/external-secrets-api/apis/meta/v1"
 )
 
 // AkeylessProvider Configures an store to sync secrets using Akeyless KV.

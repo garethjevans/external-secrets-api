@@ -12,12 +12,5 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package v1beta1
-
-import smmeta "github.com/garethjevans/external-secrets-api/apis/meta/v1"
-
-// KeeperSecurityProvider Configures a store to sync secrets using Keeper Security.
-type KeeperSecurityProvider struct {
-	Auth     smmeta.SecretKeySelector `json:"authRef"`
-	FolderID string                   `json:"folderID"`
-}
+// Package meta contains meta types for external-secret APIs.
+package meta
