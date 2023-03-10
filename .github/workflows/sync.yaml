@@ -18,12 +18,16 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: external-secrets/external-secrets
-          ref: v1.7.2
           path: lib
           token: ${{ secrets.GH_PAT }}
+          fetch-depth: 0
 
       - name: Sync Packages
         run: |
+          pushd lib
+            git checkout v1.7.2
+          popd
+
           cp -fR lib/apis/externalsecrets apis
           cp -fR lib/apis/meta apis
 
