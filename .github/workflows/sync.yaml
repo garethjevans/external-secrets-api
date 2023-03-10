@@ -23,8 +23,8 @@ jobs:
 
       - name: Sync Packages
         run: |
-          cp -R lib/apis/externalsecrets apis/externalsecrets
-          cp -R lib/apis/meta apis/meta
+          cp -fR lib/apis/externalsecrets apis
+          cp -fR lib/apis/meta apis
 
           TESTS=$(find apis -name '*_test.go')
           for TEST in $TESTS; do
@@ -38,6 +38,7 @@ jobs:
           find: "github.com/external-secrets/external-secrets"
           replace: "github.com/garethjevans/external-secrets-api"
           regex: false
+          ignore: '.git/**,.github/**'
 
       - name: Set up Go
         uses: actions/setup-go@v2
