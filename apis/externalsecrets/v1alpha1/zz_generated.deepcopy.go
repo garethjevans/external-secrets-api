@@ -20,7 +20,7 @@ limitations under the License.
 package v1alpha1
 
 import (
-	metav1 "github.com/external-secrets/external-secrets/apis/meta/v1"
+	metav1 "github.com/garethjevans/external-secrets-api/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 )
@@ -178,16 +178,6 @@ func (in *AkeylessProvider) DeepCopyInto(out *AkeylessProvider) {
 	if in.Auth != nil {
 		in, out := &in.Auth, &out.Auth
 		*out = new(AkeylessAuth)
-		(*in).DeepCopyInto(*out)
-	}
-	if in.CABundle != nil {
-		in, out := &in.CABundle, &out.CABundle
-		*out = make([]byte, len(*in))
-		copy(*out, *in)
-	}
-	if in.CAProvider != nil {
-		in, out := &in.CAProvider, &out.CAProvider
-		*out = new(CAProvider)
 		(*in).DeepCopyInto(*out)
 	}
 }
